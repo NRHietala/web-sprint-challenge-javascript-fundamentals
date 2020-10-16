@@ -27,13 +27,26 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+- The main difference between .forEach and .map are that the .forEach method doesn't automatically return anything. .forEach will mutate the original array, and .map will return a brand new array that doesn't affect the original. 
+
 2. Explain the difference between a callback and a higher order function.
+
+-I like to think of higher order functions as a hot dog factory. It's the infrastructure that the callback will run through and return a result. The callback can be beef, pork, fish or whatever you like and it'll return the same little sausages after running through the higher order function.
 
 3. What is closure?
 
+-Closure is when functions reach outside their own scope outwards towards the parent. Closure only works when reaching out, and can't reach inwards to retrieve values. The closure creates a "dome" or passage that allows the values to pass through the walls of the scope "{}" and be used inside.
+
 4. Describe the four rules of the 'this' keyword.
 
+- Implicit binding can be described as referring to what its inside or whats to the left of the dot.
+- Explicit binding is when you specifically tell what "this" is binded too. Such as .call etc.
+- New binding is creating a new object in which "this" is attached to
+- Window binding is what this is pointing too by default when it's not referring to anything. The window is the parent element of everything, and without referring it to anything else will be the default.
+
 5. Why do we need super() in an extended class?
+
+- The super() is necessary in a class that extends from another. The super() allows us to inherit the attributes and methods of the parent object.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 

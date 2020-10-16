@@ -26,5 +26,11 @@ myFunction();
 
 
 function summation (a) {
-  
+  let total = 0;
+  for(let i = 0; i <= a; i++) {
+    total += i;
+  }
+  return total;
 }
+
+console.log(summation(4));

@@ -17,46 +17,58 @@ const zooAnimals = [
 
 /* Request 1: .forEach()
 
-The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
+The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."*/
 
-*/
-const displayNames = [];
-console.log(displayNames);
 
-/* Request 2: .map()
+ const newName = zooAnimals.forEach(name => {
+   console.log(`Name: ${name.animal_name} Scientific: ${name.scientific_name}}`);
+ })
+ console.log(newName);
 
-The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
-*/
 
-const lowCaseAnimalNames
-console.log(lowCaseAnimalNames);
+// The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
-/* Request 3: .filter() 
 
-The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
+const lower = zooAnimals.map(name => name.animal_name.toLowerCase()); 
+console.log(lower)
 
-*/
-const lowPopulationAnimals
-console.log(lowPopulationAnimals);
 
-/* Request 4: .reduce() 
 
-The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
+// The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
-*/
-let populationTotal = 0;
+
+ const lowPopulationAnimals = zooAnimals.filter(animal => {
+   if(animal.population < 5) {
+     return animal;
+   }
+ })
+ console.log(lowPopulationAnimals);
+
+//   Request 4: .reduce() 
+
+//The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce ////////method takes two arguments: a callback (which itself takes two args), and an initial value for the count./*
+
+
+let populationTotal = zooAnimals.reduce(function(acc, animal) {
+  acc + animal.population;
+}, 0)
+
 console.log(populationTotal);
 
 
 // ==== Callbacks ====  
 
-/* Step 1: Create a higher-order function
-  * Create a higher-order function named consume with 3 parameters: a, b and cb
-  * The first two parameters can take any argument (we can pass any value as argument)
-  * The last parameter accepts a callback
-  * The consume function should return the invocation of cb, passing a and b into cb as arguments
-*/
+//  Step 1: Create a higher-order function
+//   * Create a higher-order function named consume with 3 parameters: a, b and cb
+//   * The first two parameters can take any argument (we can pass any value as argument)
+//   * The last parameter accepts a callback
+//   * The consume function should return the invocation of cb, passing a and b into cb as arguments
+// */
+
+function consume (a,b cb) {
+  return cb(a,b
+}
 
 
 /* Step 2: Create several functions to callback with consume();
